@@ -1,0 +1,18 @@
+1920 	 // window width
+1080 	 // window height
+1	 // fullscreen mode
+0	 // save per-frame metrics
+0	 // draw to offscreen buffer (0=onscreen, 1=offscreen)
+0	 // vsync 0=off, 1=on
+0	 // 1 = do not call eglSwapbuffers, 0 = normal draw
+0	 // first scene 0=dials, 1=singledraw, 2=multidraw, 3=texture, 4=longshader 5=groupdraw
+0	 // texture scene - use flat grey shader
+10	 // texture scene - texture blur radius
+5	 // pyramid scene x count	(+ and - keys)
+5	 // pyramid scene y count
+5	 // pyramid scene z count
+3  	 // number of batches to break groupdraw pyramids 
+0	 // pyramid scene per-pixel shader loop count
+10	 // dials per-pixel shader loop count
+100  	 // number of longshader loops per pixel
+0 	 // number of frames to render. 0=infinite
