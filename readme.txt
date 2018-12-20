@@ -21,7 +21,7 @@ A makefile is provided with the distribution. It should work on most Yocto or
 Clear linux installations. The sample compiles against:
 -Weston compositor 
 -Weston IAS package
--GLM - OpenGL Math Library
+-GLM - OpenGL Math Library v0.9.8.4 
 Make sure you have those packages or bundles installed. 
 GLM is a source-only component and therefore must be located
 in an appropriately named directory (./glm) in your source folder. 
