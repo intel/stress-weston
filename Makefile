@@ -43,6 +43,7 @@ clean:
 	@echo Done.
 
 install:
+	@mkdir -p $(DESTDIR)
 	@cp $(TARG)  $(DESTDIR)/
 	@cp params.txt  $(DESTDIR)/
 
