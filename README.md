@@ -27,6 +27,18 @@ Make sure you have those packages or bundles installed.
 GLM is a source-only component and therefore must be located
 in an appropriately named directory (./glm) in your source folder. 
 
+### Clear Linux
+
+The following steps will build stress-weston on Clear Linux:
+```
+$ sudo swupd bundle-add os-clr-on-clr software-defined-cockpit-dev
+$ wget https://cdn.download.clearlinux.org/releases/current/clear/x86_64/os/Packages/glm-dev-0.9.9.2-3.x86_64.rpm
+$ sudo rpm -i glm-dev-0.9.9.2-3.x86_64.rpm --force —nodeps
+$ wget https://github.com/intel/stress-weston/archive/0.9.tar.gz
+$ tar xf 0.9.tar.gz
+$ stress-weston-0.9
+$ make
+```
 
 ## Configuration file
 
