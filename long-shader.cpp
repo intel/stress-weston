@@ -155,7 +155,7 @@ void draw_longShader(void *data, struct wl_callback *callback, uint32_t time_now
 	glEnableVertexAttribArray(win->gl_longShader.tex1);
 
 	// fullscreen quad
-	glm::mat4 identity_matrix;
+	glm::mat4 identity_matrix(1.f);
 	glm::mat4 model_matrix = glm::rotate(identity_matrix, angle*(3.14159265f/180.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 	glUniformMatrix4fv(win->gl_longShader.rotation_uniform, 1, GL_FALSE, (GLfloat *)glm::value_ptr(model_matrix));
 

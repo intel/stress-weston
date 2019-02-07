@@ -221,8 +221,8 @@ void draw_simpleDial(void *data, struct wl_callback *callback, uint32_t time_now
 	glEnableVertexAttribArray(win->gl_tex.tex1);
 			
 		// left dial				
-		glm::mat4 model_matrix;
-		glm::mat4 identity_matrix;
+		glm::mat4 model_matrix(1.f);
+		glm::mat4 identity_matrix(1.f);
 		model_matrix = glm::translate(identity_matrix, glm::vec3(-0.5f, 0.0f, 0.0f));
 		model_matrix = glm::scale(model_matrix, glm::vec3(aspect_ratio * shrink, 1.0f * shrink, 1.0f));				
 		glUniformMatrix4fv(win->gl_tex.rotation_uniform, 1, GL_FALSE,

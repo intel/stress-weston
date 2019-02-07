@@ -274,10 +274,10 @@ void draw_simpleTexture(void *data, struct wl_callback *callback, uint32_t time_
 			
 	// fullscreen quad
 	if(win->texture_flat_no_rotate)	{		
-		model_matrix = glm::mat4();
+		model_matrix = glm::mat4(1.f);
 	} else {
 		//model_matrix = rotate(angle, 0.0f, 1.0f, 0.0f);
-		model_matrix = glm::mat4();		
+		model_matrix = glm::mat4(1.f);		
 	}
 	
 	glUniformMatrix4fv(win->gl_tex.rotation_uniform, 1, GL_FALSE,
