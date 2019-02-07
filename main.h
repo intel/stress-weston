@@ -54,6 +54,13 @@ enum DrawCases {
 	next_case,
 };
 
+// EGL priority hint
+enum eContextPriority {
+	High = 0,	
+	Medium = 1,
+	Low = 2,
+};
+
 
 // Opengl and surface/window structs
 struct output {
@@ -201,6 +208,7 @@ class textRender;
 
 // globals
 extern DrawCases g_draw_case;
+extern eContextPriority g_contextPriority;
 extern bool g_demo_mode;
 
 // pyramid geometry parameters
