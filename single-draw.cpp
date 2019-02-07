@@ -154,7 +154,7 @@ void draw_singleDrawArrays(void *data, struct wl_callback *callback, uint32_t ti
 	glUniform1f(win->gl_single.loop_count_short, win->shortShader_loop_count);
 
 	// set the pyramid rotation matrix
-	glm::mat4 identity_matrix;
+	glm::mat4 identity_matrix(1.f);
 	glm::mat4 model_matrix = glm::rotate(identity_matrix, angle*(3.14f/180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 	glUniformMatrix4fv(win->gl_single.rotation_uniform, 1, GL_FALSE,
 			   (GLfloat *) glm::value_ptr(model_matrix));
