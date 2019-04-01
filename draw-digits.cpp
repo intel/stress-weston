@@ -210,7 +210,7 @@ void textRender::DrawDigits(float fps, void *data, struct wl_callback *callback,
 	glEnableVertexAttribArray(win->gl_tex.tex1);
 			
 	// draw digit quad
-	glm::mat4 _identity_matrix;
+	glm::mat4 _identity_matrix(1.f);
 	glUniformMatrix4fv(win->gl_tex.rotation_uniform, 1, GL_FALSE,
 			   (GLfloat *) glm::value_ptr(_identity_matrix));	
 
