@@ -53,6 +53,7 @@ textRender g_TextRender;
 std::ofstream g_metricsfile;
 bool g_recordMetrics = false;
 DrawCases g_draw_case = simpleDial;
+eContextPriority g_contextPriority = eContextPriority::Medium;
 static bool g_Initalized = false;
 unsigned int g_FramesToRender = 0;
 
@@ -646,6 +647,31 @@ int read_config_file(char* config_filename)
 	std::getline(infile, line);		
 	g_window.fullscreen = safeParse(line, 1);
 	printf("Window running fullscreen = %s\n", (g_window.fullscreen) ? "true" : "false" );
+
+	// EGL priority hint
+	std::getline(infile, line);
+	printf("Context priority: ");
+	switch(line[0])
+	{
+		case 'h':
+		case 'H':
+			g_contextPriority = eContextPriority::High;
+			printf("high\n");
+			break;
+	
+		case 'l':
+		case 'L':
+			g_contextPriority = eContextPriority::Low;
+			printf("low\n");
+			break;
+
+		case 'm':
+		case 'M':
+		default:
+			g_contextPriority = eContextPriority::Medium;
+			printf("medium\n");
+			break;
+	};
 
 	// record metrics to a file?
 	std::getline(infile, line);		

@@ -76,8 +76,9 @@ static output* get_default_output(display *display)
 
 static void init_egl(display *display, window *window)
 {
-	static const EGLint context_attribs[] = {
+	static EGLint context_attribs[] = {
 		EGL_CONTEXT_CLIENT_VERSION, 2,
+		EGL_CONTEXT_PRIORITY_LEVEL_IMG, EGL_CONTEXT_PRIORITY_MEDIUM_IMG,
 		EGL_NONE
 	};
 	const char *extensions;
@@ -114,6 +115,26 @@ static void init_egl(display *display, window *window)
 
 	configs = (EGLConfig*) calloc(count, sizeof *configs);
 	assert(configs);
+
+	switch(g_contextPriority) 
+	{
+		case eContextPriority::High:
+			context_attribs[3] = EGL_CONTEXT_PRIORITY_HIGH_IMG;	
+			break;
+
+		case eContextPriority::Low:
+			context_attribs[3] = EGL_CONTEXT_PRIORITY_LOW_IMG;
+			break;
+
+		case eContextPriority::Medium:
+			context_attribs[3] = EGL_CONTEXT_PRIORITY_MEDIUM_IMG;
+			break;
+
+		default:
+			printf("Error setting context priority\n");
+			exit(0);
+	}
+
 
 	ret = eglChooseConfig(display->egl.dpy, config_attribs,
 			      configs, count, &n);
