@@ -33,11 +33,13 @@ The following steps will build stress-weston on Clear Linux:
 ```
 $ sudo swupd bundle-add os-clr-on-clr software-defined-cockpit-dev devpkg-glm
 $ wget https://cdn.download.clearlinux.org/releases/current/clear/x86_64/os/Packages/glm-dev-0.9.9.2-3.x86_64.rpm
-$ sudo rpm -i glm-dev-0.9.9.2-3.x86_64.rpm --force --nodeps
 $ git clone https://github.com/intel/stress-weston
 $ cd stress-weston
 $ make
 ```
+
+Optional manual installation of glm:
+$ sudo rpm -i glm-dev-0.9.9.2-3.x86_64.rpm --force --nodeps
 
 ## Configuration file
 
