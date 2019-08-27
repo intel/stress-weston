@@ -39,7 +39,9 @@ $ make
 ```
 
 Optional manual installation of glm:
+```
 $ sudo rpm -i glm-dev-0.9.9.2-3.x86_64.rpm --force --nodeps
+```
 
 ## Configuration file
 
