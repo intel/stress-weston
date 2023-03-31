@@ -1,6 +1,7 @@
 1920 	 // window width
 1080 	 // window height
 1	 // fullscreen mode
+m	 // EGL priority hint: h=high, m=medium, l=low
 0	 // save per-frame metrics
 0	 // draw to offscreen buffer (0=onscreen, 1=offscreen)
 0	 // vsync 0=off, 1=on
